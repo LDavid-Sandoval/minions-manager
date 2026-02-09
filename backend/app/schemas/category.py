@@ -8,4 +8,5 @@ class CategoryCreate(BaseModel):
     anio_max: int
 
 class CategoryResponse(CategoryCreate):
-    id: PydanticObjectId = Field(alias="_id")
+    # CAMBIO AQUÍ: Quitamos Field(alias="_id") y dejamos solo el tipo
+    id: PydanticObjectId

@@ -8,10 +8,11 @@ class PlayerCreate(BaseModel):
     fecha_nacimiento: date
     numero_playera: int
     posiciones: List[str]
-    categoria_id: str  # Recibimos el ID como string desde el frontend
+    categoria_id: str
 
 class PlayerResponse(BaseModel):
-    id: PydanticObjectId = Field(alias="_id")
+    # CAMBIO AQUÍ: Usamos id directo sin alias
+    id: PydanticObjectId 
     nombre_completo: str
     fecha_nacimiento: date
     numero_playera: int
